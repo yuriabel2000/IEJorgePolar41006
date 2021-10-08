@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color_textos: #2a2726;
+    --azul_institucion:#0074cc;
+    --color_shadows:#1941b196;
+    --titulos: #26386b;
+    --subtitulos:#850f0f;
+    --rojo_institucion:#ff3434;
+    --plomo_institucion:#dddddd;
+    --plomo_pagina:#f3f3f3;
+    --blanco_institucion:#f5f5f5;
+    --letra_titulos:'Lato', 'sans-serif';
+    --letra_enlaces:'PT Sans', sans-serif;
+    --letra_texto-comun:'Poppins', sans-serif;
+    --letra_texto-serio:'Noto Sans JP', 'sans-serif';
+
+    /* USO en los atributos de selectores */
+    /* .selector:
+        color: var(--Nombre de variable); */
+    
+        /* Ayuda? */
+    /* bit.ly/Variables_CSS */
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+    font-family: "Noto Sans JP", "sans-serif";
+    background-color: var(--plomo_pagina);
+}
+
+/* CSS general del proyecto */
+
+
+/* ------------------------- PRESENTACION------------------------- */
+.container-present{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 3em;
+}
+/* -------------------------Contenido DERECHA--------------- */
+.content-derecha{
+    width:50%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 15px 10px 15px 60px;
+}
+/* -----------------.----estilos de TEXTOS -----------------.----*/
+.content-derecha h1{
+    font-family:'Lato', sans-serif;
+    font-size: 2.5em;
+    color:rgb(38, 56, 107);
+    font-weight:700;
+}
+.content-derecha .subtitulo{
+    font-family:'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color:rgb(199, 9, 9);
+    font-weight:100;
+    line-height: 25px;
+    padding: 15px 0;
+}
+.content-derecha .texto-present{
+    font-family:'Roboto', Tahoma, Geneva, Verdana, sans-serif;;    
+    font-size:18px;
+    color: black;
+    border-bottom: 3px gray;
+    box-shadow: 2px 1px 10px var(--color_shadows);
+    margin-top: 20px;
+}
+.content-derecha .parrafo{ /* en caso de aÃ±adir PARRAFO, hacerlo en nueva etiqueta "p" */
+    margin:30px 30px;
+    text-align:justify;
+}
+.content-izquierda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 2em;
+    padding-top: 130px;
+}
+.content-izquierda .media-present{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom:0;
+    width: 80%;
+    min-height:200px;
+}
+.content-izquierda .media-present img {    
+    width: 100%;
+    border-radius:1.8em;
+}
+
+
+.t-enlaces-to-content{
+    font-family: Kanit;
+    font-size:2em;
+    Color:var(--bcolorinsti);;
+    font-weight: 400;
+}
+
+/* ____________ Mapa en iframe____________________________ */
+.foot-of-page {
+    margin: 2em auto;
+    width:85%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 400px;
+}
+.txto-ubicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.foot-of-page .t-ubicacion {
+    font-family:'Lato', sans-serif;
+    font-size: 2.5em;
+    color:rgb(38, 56, 107);
+    font-weight:300;
+    left: 5em;
+}
+.foot-of-page .subtitulo {
+    font-family:'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color:rgb(199, 9, 9);
+    font-weight:100;
+    line-height: 25px;
+    padding: 15px 0;
+}
+
+
+
+
+
+.responsive-iframe{
+    margin: 0 auto;
+    width: 90%;
+    height: 500px;
+    margin:2em auto;
+}
+
+.responsive-iframe .iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* __________________________________________________________Fin personal modification */ 
+ 
+/* =====================Css Index Responsive ===================== */
+
+ @media screen and (max-width: 768px) {
+    .container-present{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-derecha{
+        margin-left: 0;
+        width: 80%;
+    }
+
+
+    .content-izquierda{
+        padding-top: 0;
+        margin:0;
+        margin-top: 1em;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-present{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .foot-of-page{
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .responsive-iframe{
+        height: 25em;
+        width: 100%;
+    }
+ }
+

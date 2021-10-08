@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color_textos: #2a2726;
+    --azul_institucion:#0074cc;
+    --titulos: #003761;
+    --subtitulos:#850f0f;
+    --rojo_institucion:#ff3434;
+    --plomo_institucion:#c5c5c5;
+
+
+    /* USO en los atributos de selectores */
+    /* .selector:
+        color: var(--Nombre de variable); */
+    
+        /* Ayuda? */
+    /* bit.ly/Variables_CSS */
+
+    --rcolorinsti: ;
+    --bcolorinsti: 
+    --gcolorbg:;
+}
+/* Rutas para acceder a variables */
+    /* var(--rcolorinsti);
+       var(--bcolorinsti);
+       var(--gcolorbg) [color blanco]*/
+
+.historia_grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    gap: 1.6em;
+}
+
+
+.header_historia {
+    grid-column: 1/-1;
+    font-size: large;
+    font-family: 'Lato', "sans-serif";
+    color:var(--titulos); /* revisar */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.historia_principal-content{
+    grid-column: span 4;
+}
+
+hr{
+    grid-column: span 7;
+}
+.historia_institucional{
+    grid-column: span 4;
+}
+
+.historia_txt {
+    width: 100%;
+}
+
+.historia_txt h2{
+    font-size: 1.6em;
+    font-family: "Lato", sans-serif;
+    color: var(--subtitulos); /* revisar */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    margin: 2em 0 .7em;
+}
+.historia_txt h3{
+    font-size: 1.2em;
+    font-family: "Lato", sans-serif;
+    color: var(--subtitulos); /* revisar */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: left;
+    margin: 0.5em 0 .3em;
+}
+
+.historia_txt p{
+    color: #000000; /* revisar */
+    font-size: 1.1rem;
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+    line-height: 2;
+}
+
+.sidebar_historia {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1;
+    gap:1em;
+    place-items: end center;
+}
+
+.sidebar_img_father{
+    width:80%;
+    min-width: ; /* revisar */
+    max-width: ;
+}
+
+.sidebar_img_father img{
+    width: 100%;
+}
+
+.sidebar_img_father h4{
+    font-family: "Lato", sans-serif;
+    color: var(--subtitulos); /* revisar */
+    font-weight: bold;
+    text-transform: uppercase;
+    word-spacing: 10px;
+    letter-spacing: 0.6px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0.5em 0 .3em;
+}
+
+
+
+.himno_historia{
+    grid-column: 1/-1;
+}
+
+.header_historia_himno{ /* revisar */
+    width: 100%;
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+    color: var(--subtitulos); /* revisar */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+
+.himno_img_father{
+    width:50%;
+    margin: 2em auto;
+    min-width: ; /* revisar */
+    max-width: ;
+}
+.himno_img_father img {
+    width: 100%;   
+}
+
+
+
+/* ========= Css HISTORIA RESPONSIVE =========*/
+
+@media screen and (max-width: 768px) {
+    
+    .historia_grid{
+        gap: 10px;
+    }
+
+    .historia_principal-content{
+        grid-column:1/5;
+        width: 100%;
+        
+    }
+    
+    .sidebar_historia{
+        grid-column: span 3;
+        place-items: center center;
+    }
+
+    .historia_institucional{
+        grid-column: span 7;
+        place-items: center center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .historia_principal-content{
+        grid-column:1/-1;
+        width: 100%;
+    }
+    
+    .sidebar_historia{
+        grid-column: 1/-1;
+        place-items: center center;
+    }
+    
+    .sidebar_historia .sidebar_img_father{
+        width: 70%;
+    }
+    
+    .historia_institucional .sidebar_img_father{
+        width: 100%;
+    }
+    .historia_himno_titulo{
+        width: 100%;
+        margin: 2em auto 1em;
+        line-height: 1.2;
+    }
+    .himno_img_father{
+        width:100%;
+    }
+
+}

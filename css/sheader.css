@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+/* añadiendo letra : "Noto Sans JP" 400 500 y 700 */
+
+/* Variables CSS para guardar colores y Tipos de letra */
+
+:root{
+    --color_textos: #2a2726;
+    --azul_institucion:#0074cc;
+    --color_shadows:#1941b196;
+    --titulos: #26386b;
+    --subtitulos:#850f0f;
+    --rojo_institucion:#ff3434;
+    --plomo_institucion:#dddddd;
+    --plomo_pagina:#f3f3f3;
+    --blanco_institucion:#f5f5f5;
+    --letra_titulos:'Lato', 'sans-serif';
+    --letra_enlaces:'PT Sans', sans-serif;
+    --letra_texto-comun:'Poppins', sans-serif;
+    --letra_texto-serio:'Noto Sans JP', 'sans-serif';
+
+    /* USO en los atributos de selectores */
+    /* .selector:
+        color: var(--Nombre de variable); */
+    
+        /* Ayuda? */
+    /* bit.ly/Variables_CSS */
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    width:100%;
+    min-height: 6em; /* 8vh si no funciona */ /* revisar */
+    padding-top: 1em;
+    font-family: var(--letra_texto-serio);
+    /* añadiendo letra : "Noto Sans JP" 400 500 y 700 */;
+}
+
+.nav_img_logo {
+    display: block;
+    width:20%;
+    margin-left: 2em;
+    align-self: center;
+
+}
+.logo {
+    width: 100%;
+}
+
+
+
+.ham {
+    display: none;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.ham span {
+    display:block;
+    background-color: var(--azul_institucion);
+    height:3px;
+    width: 28px;
+    margin: 10px auto; 
+    border-radius: 2px;
+}
+
+.enlaces__menu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    width:80%;
+}
+.enlaces__menu li{
+   /*  padding: 1em 2em;  */
+    line-height: 4em;
+    list-style-type: none;
+    transition: 0.4s;
+    width:19%;
+    text-align: center;
+}
+
+.enlaces__menu li a{
+    display:inline-block;
+    width: 100%;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--subtitulos);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.enlaces__menu li:hover {
+    background-color: rgb(28, 52, 119);
+}
+
+.enlaces__menu li:hover a{
+    color: var(--blanco_institucion);
+}
+
+/* Estilo a la "pagina actual" en el navbar */
+#inicio .inicio,
+#historia .historia,
+#nosotros .nosotros,
+#contacto .contacto,
+#galery .galery {
+    background-color:rgb(28, 52, 119);
+    color: var(--blanco_institucion);
+}
+
+
+
+/*======================== DISPOSITIVOS MOVILES ========================*/
+
+@media screen and (max-width:768px) {
+
+    .ham {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        transition: 0.2s 0.1s;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 0;
+    }
+    .enlaces__menu{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height:92vh;
+        margin:0;
+        padding:0; 
+        display:none;
+        opacity:0;
+        transition: opacity 5s ease-out;
+        width:100%;
+    }
+    .enlaces__menu li {
+        width: 100%;
+        text-align:center;
+        padding: 20px;
+    }
+    .enlaces__menu li a{
+        padding: 0;
+    }
+
+    .nav_img_logo{
+        width: 50%;
+        margin:0;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .nav_img_logo{
+        width: 60%;
+        
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .nav_img_logo{
+        width:65%;
+    }
+    .ham {
+        margin-right: 1rem;
+        right: 1px;
+    }
+}
+
+
+
+
+
+@keyframes muestraMenu{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.enlaces__menu.activado {
+    display: flex;
+    animation: muestraMenu 350ms ease-in-out both;
+}
+
+.br-1.animado{
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+.br-2.animado{
+    opacity:0;
+}
+.br-3.animado{
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+.ham.girar:hover{
+    transform:rotate(360deg);
+}

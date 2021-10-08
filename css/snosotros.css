@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+    font-family: "Noto Sans JP", "sans-serif";
+    background-color: var(--plomo_pagina);
+}
+
+:root{
+    --color_textos: #2a2726;
+    --azul_institucion:#0074cc;
+    --titulos: #26386b;
+    --subtitulos:#850f0f;
+    --rojo_institucion:#ff3434;
+    --plomo_institucion:#dddddd;
+    --plomo_pagina:#f3f3f3;
+    --blanco_institucion:#f5f5f5;
+    --letra_titulos:'Lato', 'sans-serif';
+    --letra_enlaces:'PT Sans', sans-serif;
+    --letra_texto-comun:'Poppins', sans-serif;
+    --letra_texto-serio:'Noto Sans JP', 'sans-serif';
+
+    /* USO en los atributos de selectores */
+    /* .selector:
+        color: var(--Nombre de variable); */
+    
+        /* Ayuda? */
+    /* bit.ly/Variables_CSS */
+}
+/* Rutas para acceder a variables */
+    /* var(--rcolorinsti);
+       var(--bcolorinsti);
+       var(--gcolorbg) [color blanco]*/
+
+
+/* ===========================Misión y Visión ===========================*/
+.inicio_contenedor{
+    margin: 0 4em;
+}
+.inicio_contenedor {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.inicio_title{
+    font-family:var(--letra_titulos);
+    font-size: 2.5em;
+    color:rgb(38, 56, 107);
+    font-weight:700;
+}
+
+.inicio_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 85%;
+    margin: 1em auto;
+}
+
+.ini_content_txt{
+    display:flex;
+    align-self: start;
+    flex-direction: column;
+    text-align: justify;
+    box-shadow: 2px 1px 10px rgba(25, 65, 177, 0.589);
+    font-size: 1em;
+    padding: 2em;
+    font-family:; /* revisar */
+    width:60%;
+}
+
+.title_vision_y_mision{ /* titulos */
+    font-size: 2em;
+    line-height: 1.2em;
+    font-family:var(--letra_texto-serio );
+    color: var(--subtitulos);
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.ini_content_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ini_content_img h4{
+    font-family: "Lato", sans-serif;
+    color: var(--subtitulos);
+    font-weight: bold;
+    text-transform: uppercase;
+    word-spacing: 10px;
+    letter-spacing: 0.6px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0.5em 0 .3em;
+}
+
+
+.ini_content_img img{
+    width: 100%;
+}
+
+.ini_content_img_vision img {
+    margin-left: 1em;
+}
+
+.ini_content_img_vision{
+    width:40%;
+}
+
+.ini_content_img_mision img {
+    margin-right: 1em;
+    
+}
+.ini_content_parrafo {
+    color: var(--color_textos);
+}
+
+/*====================== Valores Polarinos====================== */
+.medio_contenedor{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 90%;
+    margin: 2em auto;
+    
+}
+.conte_titulo{
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color:; /* revisar */
+    margin: 10px;
+    padding:0;
+}
+.contenedor_cards-valores{
+    display: flex;
+    flex-flow: row nowrap;
+    height:500px; /* padre de las cards */
+}
+
+.card_body{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 2px;
+    text-align: justify;     
+    padding: 30px;
+    height: 100%;
+    width: 33.33%;
+    color: rgba(246, 238, 238, 0.918);
+}
+.card-1{
+    background-color: var(--rojo_institucion);
+}
+.card-2{
+    background-color: var(--plomo_institucion);
+    color: var(--color_textos);
+}
+.card-3{
+    background-color: var(--azul_institucion);
+}
+.card_img{
+    display: grid;
+    place-content: center;
+    margin:2em auto;
+}
+.card_img img{
+    height: 7em;
+    min-height: 15px;
+    width: 7em;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.698);
+    align-items: center;
+}
+
+.card_title{
+    text-align: center;
+    font-size: 1.3em;
+    margin: 5px;
+    color: ; /* Revisar */
+    font-family: 'PT Sans', sans-serif;;
+    text-transform: uppercase;
+}
+
+/* ================Responsive Nosotros================ */
+
+@media screen and (max-width:768px) {
+    .inicio_content{
+        flex-direction: column;
+        width:95%;
+    }
+    .content_mision{
+        flex-direction: column-reverse;
+    }
+    .ini_content_txt{
+        margin-bottom: 1.5em;
+        width:100%;
+    }
+
+    .ini_content_img_vision{
+        width: 70%;
+    }
+    .ini_content_img img{
+        margin: 0;
+    }
+    .contenedor_cards-valores{
+        flex-direction:column;
+        width:100%;
+        height: fit-content;
+    }
+
+    .card_body{
+        height: 33.3%;
+        width:100%;
+        flex-direction: row;
+
+    }
+
+    .card_responsive{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        min-width: 25%;
+    }
+
+    .card_title{
+        margin: 0 auto;        
+    }
+
+    .card_txt{
+        padding-left:2em;
+    }
+    .card_img{
+        margin: 0;
+    }
+    .card_img img{
+        height: 4.5em;
+        width: 4.5em;
+    }
+    
+}
+
+@media screen and (width:600px) {
+    
+    .ini_content_img_vision{
+        width: 95%;
+    }
+
+}
+
+@media (min-width: 480px){
+    .inicio_contenedor{
+        margin: 1em;
+    }
+}
+
+
+@media screen and (max-width:400px){
+    .inicio_contenedor{
+        margin: 0.5em;
+    }
+    
+    .inicio_content{
+        width:100%;
+    }
+
+    .medio_contenedor {
+        width:100%;
+        margin: 0;
+    }
+
+}
+
