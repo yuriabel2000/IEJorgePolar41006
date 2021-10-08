@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/sform.css">
+     <!-- header -->
+     <link rel="stylesheet" href="../css/sheader.css">
+     <!-- footer -->
+     <link rel="stylesheet" href="../css/sfooter.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <!-- General Preconect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=PT+Sans:ital,wght@0,700;1,700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    
+        <!-- CSS rules to specify families
+    
+        font-family: 'Lato', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'PT Sans', sans-serif; -->
+    
+    <!-- librerias externas -->
+    <!-- ANIMACIONES CSS ANIMATE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Iconos de FONTASTIC -->
+    <link href="https://file.myfontastic.com/ABrTt3XXcw5n6XSnDJgBNA/icons.css" rel="stylesheet">
+            
+    <title> Informes y Consultas | I.E. deJorge Polar</title>
+    <link rel="shortcut icon" href="../assets/icons/iconoWebJP.png" type="image/x-icon">
+
+</head>
+
+<body id="contacto">
+    <script src="../js/jsHeaderGenerator.js"></script>
+    <div class="content">
+        <h1 class="logo_en_letras animate__animated animate__bounce ">
+            JORGE <span class="span">POLAR</span>
+        </h1>
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <h3 class="animate__animated animate__fadeInLeft">
+                    Ingresa tus datos para identificarte
+                </h3>
+                <form id="form" action="https://formspree.io/f/mayaklkb" method="POST">
+                    <p>
+                        <label for="#nombre">Nombres</label>
+                        <input class="animate__animated animate__bounce" name="nombre" type="text" id="nombre" required>
+                    </p>
+                    <p>
+                        <label for="#email">Correo Electronico</label>
+                        <input class="animate__animated animate__bounce" name="email" type="email" id="email" required>
+                    </p>
+                    <p>
+                        <label for="celular">Celular/telefono</label>
+                        <input class="animate__animated animate__bounce" type="phone" name="contacto" id="celular"
+                            required>
+                    </p>
+                    <p>
+                        <label for="">Asunto</label>
+                        <input class="animate__animated animate__bounce" type="text" id="asunto" name="razon/asunto"
+                            required>
+                    </p>
+                    <p class="block">
+                        <label for="">Explicación/contenido</label>
+                        <textarea class="animate__animated animate__bounce" name="contenido-message" id="mensaje"
+                            required rows="3" placeholder="Aqui el asunto"></textarea>
+                    </p>
+                    <p class="block">
+                        <button style="display:inline-block" type="submit">
+                            Enviar
+                        </button>
+                    </p>
+                </form>
+            </div>
+
+
+            <div class="contact-info">
+                <h4>
+                    Más Información
+                </h4>
+                <ul>
+                    <li>
+                        <i class="icon-phone">984587152</i>
+                    </li>
+                    <li class="icon-location">URB. La melgariana F-14, Jose Luis Bustamante y Rivero, Arequipa</li>
+                    <li class="icon-mail">email@example.com</li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem voluptas autem, culpa harum
+                    recusandae labore necessitatibus eum odit sequi temporibus!
+                </p>
+                <p>
+                    41006 JORGE POLAR 2021 &copy;
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jsFooterGenerator.js"></script>
+    <!-- js scripts -->
+    <script>
+        const $form = document.querySelector('#form');
+
+        $form.addEventListener('submit', handleSubmit);
+
+        async function handleSubmit(event){
+           event.preventDefault()
+           const form = new formData(this)
+           const response = await fetch(this.action, {
+                method: this.method, 
+                body: form,
+                headers:{
+                    'Accept':'aplication/json'
+                }
+           })
+           if (response.ok){
+                this.reset()
+                alert('Gracias por escribirnos, ya recibimos tu mensaje')
+           }
+        }
+    </script>
+</body>
+
+</html>
